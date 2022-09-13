@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            background-color: #0ae9e9;
+        }
+
+        .container {
+            border: 2px solid red;
+            text-align: center;
+            margin: auto;
+            width: 50vw;
+            margin-top: 66px;
+            background-color: white;
+            border-radius: 10px;
+        }
+
+        form {
+            font-size: 20px;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: bold;
+        }
+
+        input {
+            width: 59px;
+        }
+
+        button {
+            width: 7vw;
+            background-color: rgb(157 172 240);
+            border-radius: 3px;
+            height: 4vh;
+            margin: 21px 10px;
+            margin-left: 790px;
+        }
+
+        .copyright {
+            font-size: 23px;
+            text-align: center;
+            margin: auto;
+            font-style: oblique;
+            font-weight: bold;
+            margin-top: 150px;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="container">
+        <h1 style="text-align:center ;margin-bottom:50px">Result Sheet for S.E Information Technology</h1>
+        <form action="">
+            Name : <input style="width: 166px" type="text"> &nbsp;&nbsp;&nbsp;<span>Seat No: <input style="width: 166px"
+                    type="number" min="0"></span>
+            <br>
+            <br>
+            <div style="margin-right:192px;">
+                <label for="maths">Engineering Mathematics -IV</label>
+                <span><input id="maths" name="maths" type="number" min="0" max="80"
+                        onchange="passOrFail('maths')"></span>
+            </div>
+            <br>
+            <div style="margin-right:92px;">
+                <label for="cn">Computer Networks and Network Design </label>
+
+                <span><input id="cn" name="cn" type="number" min="0" max="80" onchange="passOrFail('cn')"></span>
+            </div>
+
+            <br>
+            <div style="margin-right:290px;">
+                <label for="os">Operating System</label>
+                <span><input id="os" name="os" type="number" min="0" max="80" onchange="passOrFail('os')"></span>
+            </div>
+
+            <br>
+            <div style="margin-right:290px;">
+                <label for="at">Automata Theory</label>
+                <span><input id="at" name="at" type="number" min="0" max="80" onchange="passOrFail('at')"></span>
+            </div>
+
+            <br>
+            <div style="margin-right:86px;">
+                <label for="coa">Computer Organisation and Architecture</label>
+                <span><input id="coa" name="coa" type="number" min="0" max="80" onchange="passOrFail('coa')"></span>
+            </div>
+
+        </form>
+        <button onclick="Successful()">Submit</button>
+    </div>
+
+    <br>
+    <div class="copyright">Designed By Pratik &#169;</div>
+
+
+    <script>
+
+        function passOrFail(sub) {
+
+            element = document.getElementById(sub);
+            value = element.value;
+
+
+            if (value < 0 || value > 100) {
+                alert("Enter the valid marks !!");
+
+
+            }
+            else {
+
+                if (element.value < 29) {
+                    string = element.value.toString() + " F";
+                    element.setAttribute("type", "text");
+                    element.value = string;
+
+                }
+                if (element.value == 29) {
+                    string = element.value.toString() + "@3";
+                    element.setAttribute("type", "text");
+                    element.value = string;
+                }
+
+                if (element.value == 30) {
+                    string = element.value.toString() + "@2";
+                    element.setAttribute("type", "text");
+                    element.value = string;
+                }
+
+                if (element.value == 31) {
+                    string = element.value.toString() + "@1";
+                    element.setAttribute("type", "text");
+                    element.value = string;
+                }
+
+                if (element.value >= 32) {
+                    string = element.value.toString() + " P";
+                    element.setAttribute("type", "text");
+                    element.value = string;
+                }
+            }
+        }
+
+        Successful = () => {
+
+            cn = document.getElementById("cn");
+            cn = document.getElementById("os");
+            cn = document.getElementById("at");
+            cn = document.getElementById("coa");
+            cn = document.getElementById("cn");
+            cn = document.getElementById("maths");
+
+            if (cn.value == "" | os.value == "" | maths.value == ""  | coa.value == ""  | at.value == "" ) {
+                alert("Please enter all the details !")
+            }else
+            {
+                alert("Your details are successfuly submitted ");
+            }
+        }
+
+    </script>
+</body>
+
+</html>
